@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="yambaclientlib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Yamba/libs/yambaclientlib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

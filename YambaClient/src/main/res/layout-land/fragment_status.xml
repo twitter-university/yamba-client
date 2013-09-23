@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".StatusActivity" >
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_weight="2" >
+
+        <TextView
+            android:id="@+id/status_label"
+            style="@style/yambaText.label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/status_label" />
+
+        <TextView
+            android:id="@+id/status_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/status_label"
+            android:layout_gravity="right"
+            android:text="@string/status_count"
+            android:textColor="@color/green" />
+
+        <Button
+            android:id="@+id/status_submit"
+            style="@style/yambaText.button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:enabled="false"
+            android:text="@string/status_submit" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/status_status"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:background="@color/fog"
+        android:gravity="top|left"
+        android:hint="@string/status_hint"
+        android:inputType="textMultiLine" />
+
+</LinearLayout>

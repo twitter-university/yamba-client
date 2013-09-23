@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="green">#22ff22</color>
+    <color name="yellow">#ffdd00</color>
+    <color name="red">#cc0000</color>
+    <color name="label">#0099ff</color>
+    <color name="accent">#0033ff</color>
+    <color name="fog">#cccccccc</color>
+    <color name="white">#ffffff</color>
+    
+
+</resources>
