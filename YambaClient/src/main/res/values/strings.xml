@@ -4,34 +4,20 @@
     <!-- Application -->
     <string name="app_name">Yamba</string>
     <string name="menu_timeline">Timeline</string>
-    <string name="menu_status">Status</string>
+    <string name="menu_tweet">Tweet</string>
     <string name="menu_about">About</string>
-    <string name="about_yamba">Yamba @Twitter\n    Bootcamp 9/13/2013</string>
-    <string name="perm_timeline_read_label">Timeline Read</string>
-    <string name="perm_timeline_read_desc">Permission to read the timeline</string>
-    <string name="perm_timeline_write_label">Timeline Write</string>
-    <string name="perm_timeline_write_desc">Permission to write the timeline</string>
+    <string name="about_yamba">Yamba @Twitter\n    Twitter University</string>
 
-    <!-- Prefs -->
-    <string name="prefs_label">Prefs</string>
-    <string name="prefs_header">Yamba prefs</string>
-    <string name="prefs_key_user">PREFS.USER</string>
-    <string name="prefs_title_user">Account</string>
-    <string name="prefs_key_pass">PREFS.PASS</string>
-    <string name="prefs_title_password">Password</string>
-    <string name="prefs_key_uri">PREFS.URI</string>
-    <string name="prefs_title_uri">Endpoint</string>
-    
-    <!-- Status -->
-    <string name="status_label">Status</string>
-    <string name="status_count">140</string>
-    <string name="status_hint">Wazzup?</string>
-    <string name="status_submit">Submit</string>
+    <!-- Tweet -->
+    <string name="tweet_label">Tweet</string>
+    <string name="tweet_count">140</string>
+    <string name="tweet_hint">Wazzup?</string>
+    <string name="tweet_submit">Submit</string>
     <string name="fail">Post failed!</string>
     <string name="success">Post succeeded!</string>
 
     <!-- Notifications -->
-    <string name="notify_title">New Status!</string>
+    <string name="notify_title">New Tweet!</string>
     <string name="notify_message">new messages</string>
     
 </resources>

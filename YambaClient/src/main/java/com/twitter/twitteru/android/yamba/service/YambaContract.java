@@ -24,7 +24,7 @@ public class YambaContract {
 
         // Execute action method id parameter
         public static final String PARAM_OP
-            = "com.twitter.twitteru.android.yamba.service.STATUS_OP";
+            = "com.twitter.twitteru.android.yamba.service.TWEET_OP";
         // method id parameter value: post a message.  Parameter is the message
         public static final int OP_POST = -1;
         // method id parameter value: poll once.  No parameters.
@@ -34,9 +34,9 @@ public class YambaContract {
         // method id parameter value: stop polling.  No parameters.
         public static final int OP_STOP_POLLING = -4;
 
-        // Parameter to EXECUTE|POST: String - the status message to be posted
-        public static final String PARAM_STATUS
-            = "com.twitter.twitteru.android.yamba.service.STATUS";
+        // Parameter to EXECUTE|POST: String - the tweet message to be posted
+        public static final String PARAM_TWEET
+            = "com.twitter.twitteru.android.yamba.service.TWEET";
 
         // Yamba Service timeline updated broadcast
         public static final String ACTION_TIMELINE_UPDATED
@@ -46,9 +46,9 @@ public class YambaContract {
         public static final String PERMISSION_RECEIVE_TIMELINE_UPDATE
             = "com.twitter.twitteru.android.yamba.service.permission.RECEIVE_TIMELINE_UPDATED";
 
-        // Timeline updated broadcast parameter: number of new statuses.
+        // Timeline updated broadcast parameter: number of new tweetes.
         public static final String PARAM_COUNT
-            = "com.twitter.twitteru.android.yamba.action.NEW_STATUS_COUNT";
+            = "com.twitter.twitteru.android.yamba.action.NEW_TWEET_COUNT";
 
         // Yamba Service post complete
         public static final String ACTION_POST_COMPLETE
@@ -60,7 +60,7 @@ public class YambaContract {
 
         // Parameter to ACTION_POST_COMPLETE: boolean - true iff post succeeded
         public static final String PARAM_POST_SUCCEEDED
-            = "com.twitter.twitteru.android.yamba.action.NEW_STATUS_COUNT";
+            = "com.twitter.twitteru.android.yamba.action.NEW_TWEET_COUNT";
     }
 
     public static final String AUTHORITY = "com.twitter.twitteru.android.yamba.timeline";
@@ -91,8 +91,8 @@ public class YambaContract {
 
         public static class Columns {
             public static final String ID = BaseColumns._ID;
-            public static final String USER = "user";
-            public static final String STATUS = "status";
+            public static final String HANDLE = "handle";
+            public static final String TWEET = "tweet";
             public static final String TIMESTAMP = "timestamp";
 
             public static final String MAX_TIMESTAMP = "max_ts";

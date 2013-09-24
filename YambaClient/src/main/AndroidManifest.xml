@@ -29,7 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.twitter.twitteru.android.yamba.client.StatusActivity" />
+        <activity android:name="com.twitter.twitteru.android.yamba.client.TweetActivity" />
         <activity android:name="com.twitter.twitteru.android.yamba.client.TimelineDetailActivity" />
 
         <receiver android:name="com.twitter.twitteru.android.yamba.service.TimelineUpdateReceiver">

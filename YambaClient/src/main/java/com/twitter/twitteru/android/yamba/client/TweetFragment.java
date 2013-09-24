@@ -16,18 +16,18 @@ import android.widget.TextView;
 import com.twitter.twitteru.android.yamba.service.YambaServiceHelper;
 
 
-public class StatusFragment extends Fragment {
-    public static final String TAG = "STATUS";
+public class TweetFragment extends Fragment {
+    public static final String TAG = "TWEET";
 
     private int okColor;
     private int warnColor;
     private int errColor;
 
-    private int statusLenMax;
+    private int tweetLenMax;
     private int warnMax;
     private int errMax;
 
-    private EditText statusView;
+    private EditText tweetView;
     private TextView countView;
     private Button submitButton;
 
@@ -38,7 +38,7 @@ public class StatusFragment extends Fragment {
 
         Resources rez = getResources();
         okColor = rez.getColor(R.color.green);
-        statusLenMax = rez.getInteger(R.integer.status_limit);
+        tweetLenMax = rez.getInteger(R.integer.tweet_limit);
         warnColor = rez.getColor(R.color.yellow);
         warnMax = rez.getInteger(R.integer.warn_limit);
         errColor = rez.getColor(R.color.red);
@@ -49,18 +49,18 @@ public class StatusFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle state) {
         if (BuildConfig.DEBUG) { Log.d(TAG, "view created"); }
 
-        View v = inflater.inflate(R.layout.fragment_status, parent, false);
+        View v = inflater.inflate(R.layout.fragment_tweet, parent, false);
 
-        countView = (TextView) v.findViewById(R.id.status_count);
+        countView = (TextView) v.findViewById(R.id.tweet_count);
 
-        submitButton = (Button) v.findViewById(R.id.status_submit);
+        submitButton = (Button) v.findViewById(R.id.tweet_submit);
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View vv) { post(); }
         });
 
-        statusView = (EditText) v.findViewById(R.id.status_status);
-        statusView.addTextChangedListener(
+        tweetView = (EditText) v.findViewById(R.id.tweet_tweet);
+        tweetView.addTextChangedListener(
                 new TextWatcher() {
                     @Override
                     public void afterTextChanged(Editable s) { updateCount(); }
@@ -76,11 +76,11 @@ public class StatusFragment extends Fragment {
     }
 
     void updateCount() {
-        int n = statusView.getText().length();
+        int n = tweetView.getText().length();
 
-        submitButton.setEnabled(checkStatusLen(n));
+        submitButton.setEnabled(checkTweetLen(n));
 
-        n = statusLenMax - n;
+        n = tweetLenMax - n;
 
         int color;
         if (n > warnMax) { color = okColor; }
@@ -92,15 +92,15 @@ public class StatusFragment extends Fragment {
     }
 
     void post() {
-        String status = statusView.getText().toString();
-        if (BuildConfig.DEBUG) { Log.d(TAG, "posting: " + status); }
-        if (!checkStatusLen(status.length())) { return; }
+        String tweet = tweetView.getText().toString();
+        if (BuildConfig.DEBUG) { Log.d(TAG, "posting: " + tweet); }
+        if (!checkTweetLen(tweet.length())) { return; }
 
-        statusView.setText("");
-        YambaServiceHelper.post(getActivity(), status);
+        tweetView.setText("");
+        YambaServiceHelper.post(getActivity(), tweet);
     }
 
-    private boolean checkStatusLen(int n) {
-        return (errMax < n) && (statusLenMax > n);
+    private boolean checkTweetLen(int n) {
+        return (errMax < n) && (tweetLenMax > n);
     }
 }

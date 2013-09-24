@@ -26,18 +26,18 @@ public class TimelineFragment extends ListFragment implements LoaderCallbacks<Cu
 
     private static final String[] PROJ = new String[] {
         YambaContract.Timeline.Columns.ID,
-        YambaContract.Timeline.Columns.USER,
+        YambaContract.Timeline.Columns.HANDLE,
         YambaContract.Timeline.Columns.TIMESTAMP,
-        YambaContract.Timeline.Columns.STATUS
+        YambaContract.Timeline.Columns.TWEET
     };
 
     private static final String[] FROM = new String[PROJ.length - 1];
     static { System.arraycopy(PROJ, 1, FROM, 0, FROM.length); }
 
     private static final int[] TO = new int[] {
-        R.id.timeline_row_user,
+        R.id.timeline_row_handle,
         R.id.timeline_row_time,
-        R.id.timeline_row_status
+        R.id.timeline_row_tweet
     };
 
     static class TimelineBinder implements SimpleCursorAdapter.ViewBinder {
@@ -85,8 +85,8 @@ public class TimelineFragment extends ListFragment implements LoaderCallbacks<Cu
         Intent i = TimelineDetailFragment.marshallDetails(
             getActivity(),
             c.getLong(c.getColumnIndex(YambaContract.Timeline.Columns.TIMESTAMP)),
-            c.getString(c.getColumnIndex(YambaContract.Timeline.Columns.USER)),
-            c.getString(c.getColumnIndex(YambaContract.Timeline.Columns.STATUS)));
+            c.getString(c.getColumnIndex(YambaContract.Timeline.Columns.HANDLE)),
+            c.getString(c.getColumnIndex(YambaContract.Timeline.Columns.TWEET)));
 
         startActivity(i);
     }

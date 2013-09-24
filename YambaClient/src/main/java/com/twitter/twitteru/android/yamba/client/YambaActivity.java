@@ -44,8 +44,8 @@ public abstract class YambaActivity extends Activity {
             case R.id.menu_timeline:
                 nextPage(TimelineActivity.class);
                 break;
-            case R.id.menu_status:
-                nextPage(StatusActivity.class);
+            case R.id.menu_tweet:
+                nextPage(TweetActivity.class);
                 break;
             case android.R.id.home:
             case R.id.menu_about:

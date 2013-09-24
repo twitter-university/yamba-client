@@ -7,7 +7,7 @@
     tools:context=".TimelineDetailFragment" >
 
     <TextView
-        android:id="@+id/timeline_detail_user"
+        android:id="@+id/timeline_detail_handle"
         style="@style/yambaText.label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +21,7 @@
         android:layout_gravity="right" />
 
     <TextView
-        android:id="@+id/timeline_detail_status"
+        android:id="@+id/timeline_detail_tweet"
         style="@style/yambaText.medium"
         android:layout_width="match_parent"
         android:layout_height="0dp"

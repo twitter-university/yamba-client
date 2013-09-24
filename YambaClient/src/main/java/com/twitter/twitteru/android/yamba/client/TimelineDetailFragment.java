@@ -17,11 +17,11 @@ import com.twitter.twitteru.android.yamba.service.YambaContract;
 public class TimelineDetailFragment extends Fragment {
     private static final String TAG = "DETAILS";
 
-    public static Intent marshallDetails(Context ctxt, long ts, String user, String status) {
+    public static Intent marshallDetails(Context ctxt, long ts, String handle, String tweet) {
         Intent i = new Intent(ctxt, TimelineDetailActivity.class);
         i.putExtra(YambaContract.Timeline.Columns.TIMESTAMP, ts);
-        i.putExtra(YambaContract.Timeline.Columns.USER, user);
-        i.putExtra(YambaContract.Timeline.Columns.STATUS, status);
+        i.putExtra(YambaContract.Timeline.Columns.HANDLE, handle);
+        i.putExtra(YambaContract.Timeline.Columns.TWEET, tweet);
         return i;
     }
 
@@ -52,9 +52,9 @@ public class TimelineDetailFragment extends Fragment {
         ((TextView) details.findViewById(R.id.timeline_detail_timestamp))
             .setText(DateUtils.getRelativeTimeSpanString(
                 args.getLong(YambaContract.Timeline.Columns.TIMESTAMP, 0L)));
-        ((TextView) details.findViewById(R.id.timeline_detail_user)).setText(
-                args.getString(YambaContract.Timeline.Columns.USER));
-        ((TextView) details.findViewById(R.id.timeline_detail_status)).setText(
-                args.getString(YambaContract.Timeline.Columns.STATUS));
+        ((TextView) details.findViewById(R.id.timeline_detail_handle)).setText(
+                args.getString(YambaContract.Timeline.Columns.HANDLE));
+        ((TextView) details.findViewById(R.id.timeline_detail_tweet)).setText(
+                args.getString(YambaContract.Timeline.Columns.TWEET));
     }
 }
