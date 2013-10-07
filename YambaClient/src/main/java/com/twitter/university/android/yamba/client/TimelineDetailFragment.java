@@ -1,4 +1,4 @@
-package com.twitter.twitteru.android.yamba.client;
+package com.twitter.university.android.yamba.client;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.twitter.twitteru.android.yamba.service.YambaContract;
+import com.twitter.university.android.yamba.service.YambaContract;
 
 
 public class TimelineDetailFragment extends Fragment {

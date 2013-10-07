@@ -1,4 +1,4 @@
-package com.twitter.twitteru.android.yamba.client;
+package com.twitter.university.android.yamba.client;
 
 import android.app.Fragment;
 import android.content.res.Resources;
@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.twitter.twitteru.android.yamba.service.YambaServiceHelper;
+import com.twitter.university.android.yamba.service.YambaServiceHelper;
 
 
 public class TweetFragment extends Fragment {

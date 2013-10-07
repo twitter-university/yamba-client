@@ -1,4 +1,4 @@
-package com.twitter.twitteru.android.yamba.client;
+package com.twitter.university.android.yamba.client;
 
 public class TweetActivity extends YambaActivity {
     public static final String TAG = "TWEET_ACT";

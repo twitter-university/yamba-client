@@ -12,7 +12,7 @@
 
     <fragment
         android:id="@+id/fragment_tweet"
-        android:name="com.twitter.twitteru.android.yamba.client.TweetFragment"
+        android:name="com.twitter.university.android.yamba.client.TweetFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

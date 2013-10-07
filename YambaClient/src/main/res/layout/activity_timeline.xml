@@ -12,7 +12,7 @@
 
     <fragment
         android:id="@+id/fragment_timeline"
-        android:name="com.twitter.twitteru.android.yamba.client.TimelineFragment"
+        android:name="com.twitter.university.android.yamba.client.TimelineFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

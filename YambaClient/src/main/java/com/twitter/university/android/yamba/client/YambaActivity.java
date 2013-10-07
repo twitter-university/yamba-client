@@ -1,4 +1,4 @@
-package com.twitter.twitteru.android.yamba.client;
+package com.twitter.university.android.yamba.client;
 
 import android.app.ActionBar;
 import android.app.Activity;

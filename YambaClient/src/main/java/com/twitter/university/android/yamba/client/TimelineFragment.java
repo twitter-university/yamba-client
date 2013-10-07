@@ -1,4 +1,4 @@
-package com.twitter.twitteru.android.yamba.client;
+package com.twitter.university.android.yamba.client;
 
 import android.app.ListFragment;
 import android.app.LoaderManager.LoaderCallbacks;
@@ -16,7 +16,7 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
-import com.twitter.twitteru.android.yamba.service.YambaContract;
+import com.twitter.university.android.yamba.service.YambaContract;
 
 
 public class TimelineFragment extends ListFragment implements LoaderCallbacks<Cursor> {
@@ -24,15 +24,11 @@ public class TimelineFragment extends ListFragment implements LoaderCallbacks<Cu
 
     private static final int TIMELINE_LOADER = 666;
 
-    private static final String[] PROJ = new String[] {
-        YambaContract.Timeline.Columns.ID,
+    private static final String[] FROM = new String[] {
         YambaContract.Timeline.Columns.HANDLE,
         YambaContract.Timeline.Columns.TIMESTAMP,
         YambaContract.Timeline.Columns.TWEET
     };
-
-    private static final String[] FROM = new String[PROJ.length - 1];
-    static { System.arraycopy(PROJ, 1, FROM, 0, FROM.length); }
 
     private static final int[] TO = new int[] {
         R.id.timeline_row_handle,
@@ -60,7 +56,7 @@ public class TimelineFragment extends ListFragment implements LoaderCallbacks<Cu
        return new CursorLoader(
             getActivity(),
             YambaContract.Timeline.URI,
-            PROJ,
+            null,
             null,
             null,
             YambaContract.Timeline.Columns.TIMESTAMP + " DESC");

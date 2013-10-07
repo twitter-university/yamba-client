@@ -1,4 +1,4 @@
-package com.twitter.twitteru.android.yamba.client;
+package com.twitter.university.android.yamba.client;
 
 import android.app.Application;
 import android.content.BroadcastReceiver;
@@ -8,8 +8,7 @@ import android.content.IntentFilter;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.twitter.twitteru.android.yamba.client.R;
-import com.twitter.twitteru.android.yamba.service.YambaContract;
+import com.twitter.university.android.yamba.service.YambaContract;
 
 
 public class YambaApplication extends Application {

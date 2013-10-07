@@ -14,7 +14,7 @@
 
     <fragment
         android:id="@+id/fragment_timeline"
-        android:name="com.twitter.twitteru.android.yamba.TimelineFragment"
+        android:name="com.twitter.university.android.yamba.client.TimelineFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginRight="@dimen/activity_horizontal_margin"

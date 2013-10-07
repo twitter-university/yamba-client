@@ -1,4 +1,4 @@
-package com.twitter.twitteru.android.yamba.service;
+package com.twitter.university.android.yamba.service;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -9,9 +9,9 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.util.Log;
 
-import com.twitter.twitteru.android.yamba.client.BuildConfig;
-import com.twitter.twitteru.android.yamba.client.R;
-import com.twitter.twitteru.android.yamba.client.TimelineActivity;
+import com.twitter.university.android.yamba.client.BuildConfig;
+import com.twitter.university.android.yamba.client.R;
+import com.twitter.university.android.yamba.client.TimelineActivity;
 
 
 public class TimelineUpdateReceiver extends BroadcastReceiver {
