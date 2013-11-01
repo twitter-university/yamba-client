@@ -75,22 +75,6 @@ public class YambaContract {
     public static final String PERMISSION_WRITE
         = "com.twitter.university.android.yamba.timeline.permission.WRITE";
 
-    public static class MaxTimeline {
-        private MaxTimeline() { }
-        public static final String TABLE = "maxTimeline";
-
-        public static final Uri URI = BASE_URI.buildUpon().appendPath(TABLE).build();
-
-        private static final String MINOR_TYPE = "/vnd." + AUTHORITY + "." + TABLE;
-
-        public static final String ITEM_TYPE
-            = ContentResolver.CURSOR_ITEM_BASE_TYPE + MINOR_TYPE;
-
-        public static class Columns {
-            public static final String TIMESTAMP = "timestamp";
-        }
-    }
-
     public static class Timeline {
         private Timeline() { }
 
@@ -110,8 +94,22 @@ public class YambaContract {
             public static final String HANDLE = "handle";
             public static final String TWEET = "tweet";
             public static final String TIMESTAMP = "timestamp";
+        }
+    }
 
-            public static final String MAX_TIMESTAMP = "max_ts";
+    public static class MaxTimeline {
+        private MaxTimeline() { }
+        public static final String TABLE = "maxTimeline";
+
+        public static final Uri URI = BASE_URI.buildUpon().appendPath(TABLE).build();
+
+        private static final String MINOR_TYPE = "/vnd." + AUTHORITY + "." + TABLE;
+
+        public static final String ITEM_TYPE
+            = ContentResolver.CURSOR_ITEM_BASE_TYPE + MINOR_TYPE;
+
+        public static class Columns {
+            public static final String TIMESTAMP = "timestamp";
         }
     }
 }

@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 
 public class TimelineActivity extends YambaActivity {
-    public static final String TAG = "TIMELINE_ACT";
+    public static final String TAG = "ACT_TIMELINE";
 
     private static final String DETAILS_TAG = "TimelineActivity.DETAILS";
 

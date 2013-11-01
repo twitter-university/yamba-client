@@ -61,16 +61,16 @@ public class TweetFragment extends Fragment {
 
         tweetView = (EditText) v.findViewById(R.id.tweet_tweet);
         tweetView.addTextChangedListener(
-                new TextWatcher() {
-                    @Override
-                    public void afterTextChanged(Editable s) { updateCount(); }
+            new TextWatcher() {
+                @Override
+                public void afterTextChanged(Editable s) { updateCount(); }
 
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int b, int n, int a) { }
+                @Override
+                public void beforeTextChanged(CharSequence s, int b, int n, int a) { }
 
-                    @Override
-                    public void onTextChanged(CharSequence s, int b, int p, int n) { }
-                });
+                @Override
+                public void onTextChanged(CharSequence s, int b, int p, int n) { }
+            });
 
         return v;
     }

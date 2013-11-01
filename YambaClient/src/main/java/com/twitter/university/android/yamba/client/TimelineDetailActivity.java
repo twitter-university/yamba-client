@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 
 public class TimelineDetailActivity extends YambaActivity {
-    private static final String TAG = "DETAILS_ACT";
+    private static final String TAG = "ACT_DETAILS";
 
     public TimelineDetailActivity() {
         super(TAG, R.layout.activity_timeline_detail);
