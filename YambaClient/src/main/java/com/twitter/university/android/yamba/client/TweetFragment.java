@@ -96,8 +96,8 @@ public class TweetFragment extends Fragment {
         if (BuildConfig.DEBUG) { Log.d(TAG, "posting: " + tweet); }
         if (!checkTweetLen(tweet.length())) { return; }
 
-        tweetView.setText("");
         YambaServiceHelper.post(getActivity(), tweet);
+        tweetView.setText("");
     }
 
     private boolean checkTweetLen(int n) {

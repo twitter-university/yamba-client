@@ -18,9 +18,9 @@ public class YambaApplication extends Application {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (BuildConfig.DEBUG) { Log.d(TAG, "post complete"); }
-            postComplete(intent.getBooleanExtra(
+            postComplete(intent.getIntExtra(
                 YambaContract.Service.PARAM_POST_SUCCEEDED,
-                false));
+                0));
         }
     };
 
@@ -39,10 +39,10 @@ public class YambaApplication extends Application {
         unregisterReceiver(postCompleteReceiver);
     }
 
-    void postComplete(boolean succeeded) {
+    void postComplete(int count) {
         Toast.makeText(
             this,
-            (succeeded) ? R.string.success : R.string.fail,
+            (0 < count) ? R.string.success : R.string.fail,
             Toast.LENGTH_LONG)
             .show();
     }
