@@ -1,4 +1,16 @@
-.gradle
-/local.properties
-/.idea/workspace.xml
+
+# OSX cruft
 .DS_Store
+
+# Gradle
+.gradle
+/build
+
+# Studio
+/.idea/workspace.xml
+/.idea/libraries
+
+# Android
+/local.properties
+
+
