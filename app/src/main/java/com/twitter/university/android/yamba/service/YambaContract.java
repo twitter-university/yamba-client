@@ -28,10 +28,8 @@ public class YambaContract {
         // Execute action method id parameter
         public static final String PARAM_OP
             = "com.twitter.university.android.yamba.service.TWEET_OP";
-        // method id parameter value: post a message.  Parameter is the message
-        public static final int OP_POST = -1;
-        // method id parameter value: poll once.  No parameters.
-        public static final int OP_POLL = -2;
+        // sync posts and timeline with cloud
+        public static final int OP_SYNC = -2;
         // method id parameter value: start polling.  No parameters.
         public static final int OP_START_POLLING = -3;
         // method id parameter value: stop polling.  No parameters.
@@ -77,6 +75,29 @@ public class YambaContract {
         = "com.twitter.university.android.yamba.timeline.permission.READ";
     public static final String PERMISSION_WRITE
         = "com.twitter.university.android.yamba.timeline.permission.WRITE";
+
+    public static class Posts {
+        private Posts() { }
+
+        public static final String TABLE = "posts";
+
+        public static final Uri URI = BASE_URI.buildUpon().appendPath(TABLE).build();
+
+        private static final String MINOR_TYPE = "/vnd." + AUTHORITY + "." + TABLE;
+
+        public static final String ITEM_TYPE
+            = ContentResolver.CURSOR_ITEM_BASE_TYPE + MINOR_TYPE;
+        public static final String DIR_TYPE
+            = ContentResolver.CURSOR_DIR_BASE_TYPE + MINOR_TYPE;
+
+        public static class Columns {
+            public static final String ID = BaseColumns._ID;
+            public static final String TIMESTAMP = "timestamp";
+            public static final String TRANSACTION = "xact";
+            public static final String SENT = "sent";
+            public static final String TWEET = "tweet";
+        }
+    }
 
     public static class Timeline {
         private Timeline() { }

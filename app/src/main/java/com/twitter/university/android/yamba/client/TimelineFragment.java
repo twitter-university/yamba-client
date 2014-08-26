@@ -20,7 +20,7 @@ import com.twitter.university.android.yamba.service.YambaContract;
 
 
 public class TimelineFragment extends ListFragment implements LoaderCallbacks<Cursor> {
-    private static final String TAG = "###TIMELINE";
+    private static final String TAG = "TIMELINE";
 
     private static final int TIMELINE_LOADER = 666;
 

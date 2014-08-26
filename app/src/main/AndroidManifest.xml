@@ -7,7 +7,7 @@
     <uses-permission
         android:name="com.twitter.university.android.yamba.timeline.permission.READ" />
     <uses-permission
-        android:name="com.twitter.university.android.yamba.service.permission.EXECUTE" />
+        android:name="com.twitter.university.android.yamba.timeline.permission.WRITE" />
     <uses-permission
         android:name="com.twitter.university.android.yamba.service.permission.RECEIVE_POST_COMPLETE" />
     <uses-permission
