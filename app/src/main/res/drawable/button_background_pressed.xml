@@ -6,9 +6,9 @@
 
     <gradient
         android:angle="90"
-        android:centerColor="@color/accent"
-        android:endColor="@color/label"
-        android:startColor="@color/label"
+        android:centerColor="?yambaAccent"
+        android:endColor="?yambaSecondary"
+        android:startColor="?yambaSecondary"
         android:type="linear" />
 
     <stroke

@@ -5,5 +5,7 @@ import android.app.Fragment;
 
 public class TweetActivity extends YambaActivity {
     @Override
-    protected Fragment getRootFragment() { return new TweetFragment(); }
+    protected Fragment getRootFragment() {
+        return TweetFragment.getInstance();
+    }
 }

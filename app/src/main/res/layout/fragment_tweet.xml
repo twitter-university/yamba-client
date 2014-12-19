@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/tweet_label" />
+        android:text="@string/label_tweet" />
 
     <TextView
         android:id="@+id/tweet_count"
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right"
         android:text="@string/tweet_count"
-        android:textColor="@color/green" />
+        android:textColor="@color/count_ok" />
 
     <EditText
         android:id="@+id/tweet_tweet"

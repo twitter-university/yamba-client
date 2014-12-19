@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="green">#22ff22</color>
-    <color name="yellow">#ffdd00</color>
-    <color name="red">#cc0000</color>
-    <color name="label">#0099ff</color>
-    <color name="accent">#0033ff</color>
-    <color name="fog">#cccccccc</color>
+    <color name="primary">#55acee</color>
+    <color name="secondary">#66757f</color>
+    <color name="accent">#292f33</color>
+
+    <color name="count_ok">#008800</color>
+    <color name="count_warn">#ffbb00</color>
+    <color name="count_err">#ff0000</color>
+
+    <color name="fog">#66aaaaaa</color>
     <color name="white">#ffffff</color>
-    
 
 </resources>

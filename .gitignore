@@ -7,8 +7,9 @@
 /build
 
 # Studio
-/.idea/workspace.xml
-/.idea/libraries
+/.idea
+/build
+/*.iml
 
 # Android
 /local.properties

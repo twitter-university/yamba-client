@@ -3,7 +3,6 @@ package com.twitter.university.android.yamba.client;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,8 +11,6 @@ import android.widget.Toast;
 
 
 public abstract class YambaActivity extends Activity {
-    public static final String FRAGMENT_ROOT = "YambaActivity.ROOT";
-
     private final int layout;
 
     protected YambaActivity() { this(R.layout.activity_yamba); }
@@ -30,21 +27,24 @@ public abstract class YambaActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_timeline:
-                nextPage(TimelineActivity.class);
-                break;
-            case R.id.menu_tweet:
-                nextPage(TweetActivity.class);
-                break;
-            case android.R.id.home:
-            case R.id.menu_about:
-                about();
-                break;
-            default:
-                return super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+
+        if (id == R.id.menu_tweet) {
+            nextPage(TweetActivity.class);
+            return true;
         }
-        return true;
+
+        if (id == R.id.menu_timeline) {
+            nextPage(TimelineActivity.class);
+            return true;
+        }
+
+        if ((id == R.id.menu_about) || (id == android.R.id.home)) {
+            about();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -54,19 +54,20 @@ public abstract class YambaActivity extends Activity {
         setContentView(layout);
 
         ActionBar aBar = getActionBar();
-        aBar.setHomeButtonEnabled(true);
-        //aBar.setDisplayHomeAsUpEnabled(true);
+        if (null != aBar) {
+            aBar.setHomeButtonEnabled(true);
+            //aBar.setDisplayHomeAsUpEnabled(true);
+        }
 
-        FragmentManager mgr = getFragmentManager();
-        if (null != mgr.findFragmentByTag(FRAGMENT_ROOT)) { return; }
-
-        mgr.beginTransaction()
-            .add(R.id.fragment_root, getRootFragment(), FRAGMENT_ROOT)
-            .commit();
+        if (null == savedInstanceState) {
+            getFragmentManager().beginTransaction()
+                .add(R.id.root, getRootFragment())
+                .commit();
+        }
     }
 
-    private void nextPage(Class<?> klass) {
-        Intent i = new Intent(this, klass);
+    private void nextPage(Class<?> page) {
+        Intent i = new Intent(this, page);
         i.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(i);
     }

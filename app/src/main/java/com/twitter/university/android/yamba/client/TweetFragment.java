@@ -19,13 +19,19 @@ import com.twitter.university.android.yamba.service.YambaServiceHelper;
 public class TweetFragment extends Fragment {
     private static final String TAG = "TWEET";
 
-    private int okColor;
-    private int warnColor;
-    private int errColor;
+    public static TweetFragment getInstance() {
+        return new TweetFragment();
+    }
 
-    private int tweetLenMax;
-    private int warnMax;
-    private int errMax;
+    private YambaServiceHelper helper;
+
+    private int tweetMaxLen;
+    private int tweetWarnLen;
+    private int tweetMinLen;
+
+    private int colorOk;
+    private int colorWarn;
+    private int colorError;
 
     private EditText tweetView;
     private TextView countView;
@@ -36,13 +42,18 @@ public class TweetFragment extends Fragment {
         if (BuildConfig.DEBUG) { Log.d(TAG, "created"); }
         super.onCreate(savedInstanceState);
 
+        helper = new YambaServiceHelper(getActivity());
+
         Resources rez = getResources();
-        okColor = rez.getColor(R.color.green);
-        tweetLenMax = rez.getInteger(R.integer.tweet_limit);
-        warnColor = rez.getColor(R.color.yellow);
-        warnMax = rez.getInteger(R.integer.warn_limit);
-        errColor = rez.getColor(R.color.red);
-        errMax = rez.getInteger(R.integer.err_limit);
+
+        colorOk = rez.getColor(R.color.count_ok);
+        tweetMaxLen = rez.getInteger(R.integer.tweet_limit);
+
+        colorWarn = rez.getColor(R.color.count_warn);
+        tweetWarnLen = rez.getInteger(R.integer.warn_limit);
+
+        colorError = rez.getColor(R.color.count_err);
+        tweetMinLen = rez.getInteger(R.integer.err_limit);
     }
 
     @Override
@@ -77,33 +88,32 @@ public class TweetFragment extends Fragment {
 
     void updateCount() {
         int n = tweetView.getText().length();
+        submitButton.setEnabled(canPost(n));
 
-        submitButton.setEnabled(checkTweetLen(n));
-
-        n = tweetLenMax - n;
+        n = tweetMaxLen - n;
 
         int color;
-        if (n > warnMax) { color = okColor; }
-        else if (n > errMax) { color = warnColor; }
-        else  { color = errColor; }
+        if (n < tweetMinLen) { color = colorError; }
+        else if (n < tweetWarnLen) { color = colorWarn; }
+        else { color = colorOk; }
+        countView.setTextColor(color);
 
         countView.setText(String.valueOf(n));
-        countView.setTextColor(color);
     }
 
     void post() {
         String tweet = tweetView.getText().toString();
         if (BuildConfig.DEBUG) { Log.d(TAG, "posting: " + tweet); }
 
-        if (!checkTweetLen(tweet.length())) { return; }
+        if (!canPost(tweet.length())) { return; }
 
         submitButton.setEnabled(false);
         tweetView.setText(null);
 
-        YambaServiceHelper.post(getActivity(), tweet);
+        helper.post(tweet);
     }
 
-    private boolean checkTweetLen(int n) {
-        return (errMax < n) && (tweetLenMax > n);
+    private boolean canPost(int n) {
+        return (tweetMinLen < n) && (tweetMaxLen >= n);
     }
 }

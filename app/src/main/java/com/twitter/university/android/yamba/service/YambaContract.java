@@ -8,7 +8,7 @@ import android.provider.BaseColumns;
 public class YambaContract {
     private YambaContract() { }
 
-    public static final int VERSION = 1;
+    public static final int VERSION = 2;
 
     /** Yamba Service */
     public static class Service {
@@ -21,6 +21,9 @@ public class YambaContract {
         // Permission required to call the Yamba Service
         public static final String PERMISSION_EXECUTE
             = "com.twitter.university.android.yamba.service.permission.EXECUTE";
+
+        public static final String PACKAGE
+            = "com.twitter.university.android.yamba.service";
 
         // Execute action method id parameter
         public static final String PARAM_OP

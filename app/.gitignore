@@ -1,3 +1,6 @@
 
 # Gradle
 /build
+
+# Studio
+/*.iml

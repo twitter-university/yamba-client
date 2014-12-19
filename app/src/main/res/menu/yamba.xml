@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".YambaActivity">
 
     <item
         android:id="@+id/menu_tweet"
         android:showAsAction="ifRoom|withText"
-        android:title="@string/menu_tweet"/>
+        android:orderInCategory="100"
+        android:title="@string/label_tweet"/>
     <item
         android:id="@+id/menu_timeline"
         android:showAsAction="ifRoom|withText"
-        android:title="@string/menu_timeline"/>
+        android:orderInCategory="100"
+        android:title="@string/label_timeline"/>
     <item
         android:id="@+id/menu_about"
         android:showAsAction="never|withText"
-        android:title="@string/menu_about"/>
-    
+        android:orderInCategory="400"
+        android:title="@string/label_about"/>
+
 </menu>

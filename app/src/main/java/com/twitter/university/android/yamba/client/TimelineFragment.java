@@ -20,17 +20,17 @@ import com.twitter.university.android.yamba.service.YambaContract;
 
 
 public class TimelineFragment extends ListFragment implements LoaderCallbacks<Cursor> {
-    private static final String TAG = "TIMELINE";
+    private static final String TAG = "###TIMELINE";
 
     private static final int TIMELINE_LOADER = 666;
 
-    private static final String[] FROM = new String[] {
+    private static final String[] FROM = {
         YambaContract.Timeline.Columns.HANDLE,
         YambaContract.Timeline.Columns.TIMESTAMP,
         YambaContract.Timeline.Columns.TWEET
     };
 
-    private static final int[] TO = new int[] {
+    private static final int[] TO = {
         R.id.timeline_row_handle,
         R.id.timeline_row_time,
         R.id.timeline_row_tweet
@@ -48,6 +48,11 @@ public class TimelineFragment extends ListFragment implements LoaderCallbacks<Cu
             return true;
         }
     }
+
+    public static TimelineFragment getInstance() {
+        return new TimelineFragment();
+    }
+
 
     @Override
     public Loader<Cursor> onCreateLoader(int arg0, Bundle arg1) {
